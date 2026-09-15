@@ -5,28 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Moabeat</title>
   <style>
-    :root { color-scheme: light dark; }
-    body {
+    html, body { height: 100%; margin: 0; }
+    object { width: 100%; height: 100%; border: none; }
+    .fallback {
       font-family: system-ui, -apple-system, sans-serif;
-      max-width: 40rem;
+      max-width: 30rem;
       margin: 4rem auto;
       padding: 0 1.5rem;
-      line-height: 1.6;
-    }
-    h1 { font-size: 1.75rem; }
-    .download {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid currentColor;
-      border-radius: 0.4rem;
-      text-decoration: none;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>Moabeat</h1>
-  <p>Placeholder text goes here.</p>
-  <a class="download" href="moabeat.pdf" download>Download the PDF</a>
+  <object data="moabeat.pdf" type="application/pdf">
+    <p class="fallback">
+      Your browser can't display the PDF inline.
+      <a href="moabeat.pdf">Open it directly</a> instead.
+    </p>
+  </object>
 </body>
 </html>
