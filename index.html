@@ -2,8 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=moabeat_singlepages.pdf">
   <title>Moabeat</title>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=moabeat_singlepages.pdf">
+  </noscript>
+  <script>
+    // Count the visit, then go straight to the PDF. keepalive lets the request
+    // finish after the navigation, so there is no delay.
+    try {
+      var params = new URLSearchParams({
+        p: '/',
+        t: document.title,
+        r: document.referrer,
+        s: [screen.width, screen.height, window.devicePixelRatio || 1].join(',')
+      });
+      fetch('https://moabitcookbook.goatcounter.com/count?' + params, {
+        mode: 'no-cors',
+        credentials: 'omit',
+        keepalive: true
+      });
+    } catch (e) {}
+    location.replace('moabeat_singlepages.pdf');
+  </script>
 </head>
 <body>
   <p><a href="moabeat_singlepages.pdf">Open the PDF</a></p>
